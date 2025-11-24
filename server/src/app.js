@@ -1,6 +1,7 @@
 import "./configs/dotenv.config.js";
 import express from "express";
 import allRoutes from "./routes/index.route.js";
+import mountStatic from "./configs/serveStatic.config.js";
 
 const app = express();
 
@@ -8,5 +9,8 @@ const app = express();
 
 // *** Mount all Routes ***
 app.use("/api", allRoutes);
+
+// *** Make ready for deployment ***
+mountStatic(app);
 
 export default app;
