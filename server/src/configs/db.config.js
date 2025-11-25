@@ -15,6 +15,9 @@ const connectDB = async () => {
   // Replace <PASSWORD> in the MongoDB URI
   const DB = DATABASE.replace("<db_password>", encodeURIComponent(DB_PASSWORD));
 
+  // OPTIONAL: explicitly set the dbName to ensure Mongoose uses the named DB
+  const options = { dbName: "chatty-app_db" };
+
   // Connect to MongoDB
   try {
     await mongoose.connect(DB);

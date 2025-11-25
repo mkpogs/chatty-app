@@ -4,6 +4,7 @@ import allRoutes from "./routes/index.route.js";
 import mountStatic from "./configs/serveStatic.config.js";
 
 const app = express();
+app.use(express.json());
 
 // *** Setup middlewares configurations ***
 
